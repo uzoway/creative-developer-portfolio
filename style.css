@@ -1,0 +1,194 @@
+@font-face {
+    font-family: "anton";
+    src: url("./assets/fonts/anton/Anton-Regular.woff") format("woff"),
+         url("./assets/fonts/anton/Anton-Regular.woff2") format("woff2");
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "pangram";
+    src: url("./assets/fonts/pp__neue/PPNeueMontreal-Medium.otf") format("otf");
+    font-display: swap;
+}
+
+:root {
+    --orange: #D55533;
+    --black: #1E0C07;
+    --pale-orange: #FFBB68;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-size: 16px;
+}
+
+html, body {
+    width: 100vw;
+    min-height: 100vh;
+    overflow: hidden;
+}
+
+.container {
+    width: 100%;
+    min-height: 100vh;
+    background-color: var(--orange);
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 2rem 3.75rem 0;
+    z-index: 2;
+    opacity: 0;
+}
+
+.header .header__link {
+    display: flex;
+    align-items: center;
+    font-size: clamp(.9rem, 1.1vw, 1rem);
+    text-transform: uppercase;
+    text-decoration: none;
+    color: var(--black);
+    font-family: 'pangram', sans-serif;
+}
+
+.header__link img {
+    margin-right: .8rem;
+}
+
+.header .header__navigation {
+    font-family: 'pangram', sans-serif;
+    display: flex;
+}
+
+.header__navigation .header__navigation--item {
+    list-style: none;
+    margin-left: 1.5rem;
+}
+
+.header__navigation .header__navigation--item a {
+    font-size: clamp(.9rem, 1.5vw, 1rem);
+    color: var(--black);
+    text-decoration: none;
+    font-weight: 400;
+}
+
+.content {
+    width: 100%;
+    padding: 0 3.75rem;
+}
+
+.content__wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: nowrap;
+}
+
+.content__wrapper .left__container,
+.content__wrapper .right__container {
+    flex-basis: 45%;
+}
+
+.content__wrapper .right__container img {
+    max-width: 100%;
+    object-fit: cover;
+    height: 100%;
+    mix-blend-mode: multiply;
+}
+
+.left__container .left__container--heading {
+    font-family: 'anton', serif;
+    display: flex;
+    flex-direction: column;
+}
+
+.left__container--heading .line__container {
+    overflow: hidden;
+    display: inline-block;
+    line-height: .9;
+    padding-top: .2rem;
+    margin: .25rem 0;
+    letter-spacing: 1px;
+    display: flex;
+    align-items: center;
+    color: var(--black);
+}
+
+.left__container--heading .line__container--two {
+    color: var(--pale-orange);
+}
+
+.left__container--heading .line__container--two img {
+    margin-right: 1.5rem;
+    width: clamp(5rem, 11vw, 12rem);
+    aspect-ratio: 16/9;
+}
+
+.left__container--heading .line__container--three {
+    margin-bottom: 2rem;
+}
+
+.left__container--heading .line__container .line__container--text {
+    font-size: clamp(3rem, 7vw, 6rem);
+    text-transform: uppercase;
+    will-change: transform;
+    transform: translateY(105%);
+}
+
+.left__container .left__container--paragraph {
+    margin-left: 3rem;
+}
+
+.left__container--paragraph .line__container {
+    overflow: hidden;
+    display: inline-block;
+    line-height: 1;
+    margin: .1rem 0;
+}
+
+.left__container--paragraph .line__container:nth-child(4) {
+    margin-bottom: 2.5rem;
+}
+
+.left__container--paragraph .line__container .line__container--text {
+    font-size: clamp(1rem, 1.5vw, 1rem);
+    display: inline-block;
+    will-change: transform;
+    font-family: 'pangram', sans-serif;
+    white-space: nowrap;
+    text-transform: capitalize;
+    color: var(--black);
+    transform: translateY(110%);
+}
+
+.content__wrapper .left__container .left__container--link {
+    text-decoration: none;
+    padding: 1.2rem 4rem;
+    border-radius: 2rem;
+    background-color: var(--pale-orange);
+    color: var(--black);
+    font-family: 'pangram', sans-serif;
+    border: 2px solid var(--pale-orange);
+    font-size: clamp(.9rem, 1.5vw, 1rem);
+    outline: none;
+    margin-left: 3rem;
+    opacity: 0;
+}
+
+.content__wrapper .left__container .left__container--link:hover,
+.content__wrapper .left__container .left__container--link:focus {
+    background-color: transparent;
+    color: var(--pale-orange);
+}
