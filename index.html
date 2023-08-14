@@ -93,6 +93,45 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.0/gsap.min.js"></script>
 
     <script>
+        // Run gsap animation on page load
+        function initializeGsapAnimation() {
+            // Hero section timeline
+            const heroTL = gsap.timeline({ delay: 1, defaults: { ease: "power1.out", duration: 1 } })
+            
+            .to(".header", { autoAlpha: 1, duration: 2 })
+
+            .fromTo(".right__container img", { scale: 1.4, opacity: 0 }, { 
+                scale: 1, 
+                autoAlpha: 1, 
+                transformOrigin: "50% 0" 
+            }, "<")
+
+            .to(".line__container--one .line__container--text", {
+                y: 0,
+                stagger: .03,
+                duration: .9
+            }, "<")
+
+            .to(".line__container--two .line__container--text", {
+                y: 0,
+                stagger: .03,
+                duration: .9
+            }, "<")
+
+            .to(".line__container--three .line__container--text", {
+                y: 0,
+                stagger: .03,
+                duration: .9
+            }, "<")
+
+            .to(".left__container--paragraph .line__container--text", { y: 0, stagger: .09 }, "<")
+
+            .to(".left__container--link", { autoAlpha: 1, padding: "1.2rem 2rem" }, "<")
+        }
+
+        
+        // Iniitialize gsap animation on page load
+        window.addEventListener("DOMContentLoaded", initializeGsapAnimation);
 
     </script>
 </body>
